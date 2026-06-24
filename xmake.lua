@@ -8,7 +8,7 @@ set_policy("build.c++.modules", true)
 set_policy("build.c++.modules.std", false)
 
 add_repositories("weqeqq.repo https://github.com/weqeqq/xmake-repo.git")
-add_requires("weqeqq.test")
+add_requires("weqeqq.test 0.2.0")
 
 -- stylua: ignore start
 
@@ -16,12 +16,6 @@ target("weqeqq.terminal")
     set_kind("static")
     add_files("sources/**.cppm", {public = true})
     add_includedirs("sources", {public = true})
-    set_policy("build.c++.modules", true)
-
-target("demo")
-    set_kind("binary")
-    add_deps("weqeqq.terminal")
-    add_files("demo/**.cpp")
     set_policy("build.c++.modules", true)
 
 target("tests")
