@@ -1,7 +1,9 @@
 module;
 
 #include <algorithm>
+#include <optional>
 #include <string>
+#include <utility>
 #include <vector>
 
 export module weqeqq.terminal:rule;

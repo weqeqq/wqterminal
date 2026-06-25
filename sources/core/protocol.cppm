@@ -5,6 +5,7 @@ module;
 #include <optional>
 #include <string>
 #include <type_traits>
+#include <utility>
 #include <vector>
 
 export module weqeqq.terminal:protocol;

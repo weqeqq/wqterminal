@@ -10,6 +10,7 @@ module;
 #include <optional>
 #include <string>
 #include <string_view>
+#include <utility>
 #include <vector>
 
 export module weqeqq.terminal:console;
