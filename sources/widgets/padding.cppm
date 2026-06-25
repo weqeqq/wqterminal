@@ -4,6 +4,7 @@ module;
 #include <array>
 #include <string>
 #include <vector>
+#include <optional>
 
 export module weqeqq.terminal:padding;
 
