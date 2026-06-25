@@ -2,7 +2,7 @@ module;
 
 #include <algorithm>
 #include <chrono>
-#include <cstdio>
+#include <format>
 #include <optional>
 #include <string>
 #include <utility>
@@ -119,12 +119,8 @@ inline std::string FormatTime(double secs) {
   if (secs < 0) return "-:--";
   int s = static_cast<int>(secs);
   int h = s / 3600, m = (s % 3600) / 60, ss = s % 60;
-  char buf[24];
-  if (h > 0)
-    std::snprintf(buf, sizeof(buf), "%d:%02d:%02d", h, m, ss);
-  else
-    std::snprintf(buf, sizeof(buf), "%d:%02d", m, ss);
-  return std::string(buf);
+  if (h > 0) return std::format("{}:{:02}:{:02}", h, m, ss);
+  return std::format("{}:{:02}", m, ss);
 }
 
 class TaskRow : public IRenderable {

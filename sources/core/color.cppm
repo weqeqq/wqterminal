@@ -5,7 +5,7 @@ module;
 #include <cctype>
 #include <cmath>
 #include <cstdint>
-#include <cstdio>
+#include <format>
 #include <optional>
 #include <stdexcept>
 #include <string>
@@ -39,9 +39,8 @@ struct ColorTriplet {
   std::uint8_t blue = 0;
 
   std::string Hex() const {
-    char buf[8];
-    std::snprintf(buf, sizeof(buf), "#%02x%02x%02x", red, green, blue);
-    return std::string(buf);
+    return std::format("#{:02x}{:02x}{:02x}", static_cast<int>(red),
+                       static_cast<int>(green), static_cast<int>(blue));
   }
 
   std::array<double, 3> Normalized() const {

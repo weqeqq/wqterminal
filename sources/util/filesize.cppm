@@ -1,7 +1,7 @@
 module;
 
 #include <array>
-#include <cstdio>
+#include <format>
 #include <string>
 
 export module weqeqq.terminal:filesize;
@@ -20,9 +20,7 @@ inline std::string FormatSize(long long size, double base,
     value /= base;
     ++suffix;
   }
-  char buf[64];
-  std::snprintf(buf, sizeof(buf), "%.1f %s", value, units[suffix]);
-  return std::string(buf);
+  return std::format("{:.1f} {}", value, units[suffix]);
 }
 }
 
